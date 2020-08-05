@@ -7,4 +7,4 @@ before_install:
   - docker build -t abdo/front -f Dockerfile.dev . 
 
 script:
-  - docker run abdo/front npm run test -- --coverage
+  - docker run -e CI=true abdo/front npm run test -- --coverage
