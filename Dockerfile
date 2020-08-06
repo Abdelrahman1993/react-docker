@@ -1,4 +1,4 @@
-FROM node:alpine as buildstage
+FROM node:alpine
 
 WORKDIR /app
 
@@ -17,4 +17,4 @@ WORKDIR /usr/share/nginx/html
 
 EXPOSE 80
 
-COPY --from=buildstage /app/build .
+COPY --from=0 /app/build .
